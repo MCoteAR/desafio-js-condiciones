@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+    <link rel="stylesheet" href="./css/style.css">
+<head>
+    <meta charset="UTF-8">
+    <title>Imagen con borde</title>
+  
+</head>
+<body>
+
+    <h1>Haz clic en la imagen</h1>
+    <img id="imagen" src="./imagen/Oscar-WhiteBorder_f9dc6768-8ae0-4535-b4aa-ed64b0209462.avif" alt="Imagen" onclick="this.classList.toggle('borde-rojo')">
+
+
+
+    <h1>Selecciona tu cantidad de stickers</h1>
+
+    <div>
+        <img src="./imagen/BigBird-WhiteBorder_5b4c8464-f0d2-4c80-bbad-3ddec0c7d846.webp" alt="Sticker 1">
+        <input type="number" id="sticker1" value="0" min="0">
+    </div>
+
+    <div>
+        <img src="./imagen/CookieMonster-WhiteBorder_88d204cd-78ac-461c-8304-b851220eef9e.avif" alt="Sticker 2">
+        <input type="number" id="sticker2" value="0" min="0">
+    </div>
+
+    <div>
+        <img src="./imagen/Elmo-WhiteBorder_9e287096-967c-4d07-8b9e-5c817458f6fb.webp" alt="Sticker 3">
+        <input type="number" id="sticker3" value="0" min="0">
+    </div>
+
+   
+    <p id="resultado"></p>
+
+    <button 
+    onclick="
+    const sticker1 = parseInt(document.getElementById('sticker1').value) || 0;
+    const sticker2 = parseInt(document.getElementById('sticker2').value) || 0;
+    const sticker3 = parseInt(document.getElementById('sticker3').value) || 0;
+    const total = sticker1 + sticker2 + sticker3;
+   
+   
+    ">
+
+
+    Calcular
+</button>
+
+
+
+    <h1>Ingresa tu password</h1>
+
+    <select id="digit1">
+        <option value="1">1</option>
+        <option value="7">7</option>
+        <option value="9">9</option>
+    </select>
+
+    <select id="digit2">
+        <option value="1">1</option>
+        <option value="4">4</option>
+        <option value="9">9</option>
+    </select>
+
+    <select id="digit3">
+        <option value="1">1</option>
+        <option value="4">4</option>
+        <option value="9">9</option>
+    </select>
+
+    <button 
+        onclick="
+        const digit1 = document.getElementById('digit1').value;
+        const digit2 = document.getElementById('digit2').value;
+        const digit3 = document.getElementById('digit3').value;
+        const password = digit1 + digit2 + digit3;
+
+        if (password === '911') {
+            document.getElementById('mensaje').textContent = 'password 1 correcto';
+        } else if (password === '714') {
+            document.getElementById('mensaje').textContent = 'password 2 es correcto';
+        } else {
+            document.getElementById('mensaje').textContent = 'password incorrecto';
+        }
+        ">
+        Ingresar
+    </button>
+
+    
+    <p id="mensaje"></p>
+
+    <script src="./js/index.js"></script>
+
+</body>
+</html>
